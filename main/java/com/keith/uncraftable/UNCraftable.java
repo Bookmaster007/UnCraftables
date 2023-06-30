@@ -1,8 +1,8 @@
 package com.keith.uncraftable;
 
+import com.keith.uncraftable.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -40,23 +40,19 @@ public class UNCraftable
     // Creates a new Block with the id "uncraftable:example_block", combining the namespace and path
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
     // Creates a new BlockItem with the id "uncraftable:example_block", combining the namespace and path
-    public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
 
     public UNCraftable()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        ModItems.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
         ITEMS.register(modEventBus);
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
     }
@@ -70,8 +66,19 @@ public class UNCraftable
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
+        if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.TREE_BARK);
+            event.accept(ModItems.ACACIA_BARK);
+            event.accept(ModItems.BIRCH_BARK);
+            event.accept(ModItems.CRIMSON_BARK);
+            event.accept(ModItems.DARK_OAK_BARK);
+            event.accept(ModItems.JUNGLE_BARK);
+            event.accept(ModItems.MANGROVE_BARK);
+            event.accept(ModItems.SPRUCE_BARK);
+            event.accept(ModItems.WARPED_BARK);
+
+            event.accept(ModItems.TANNIN);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

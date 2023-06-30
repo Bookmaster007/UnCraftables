@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "ingredients",
+  "key": {
+    "X": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "U": {
+      "item": "uncraftable:tannin"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XUX",
+    "XXX"
+  ],
+  "result": {
+    "item": "minecraft:leather"
+  },
+  "show_notification": true
+}
