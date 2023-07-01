@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "minecraft:gold_block"
+    },
+    "U": {
+      "item": "minecraft:dragon_breath"
+    },
+    "O": {
+      "item": "golden_apple"
+    }
+
+  },
+  "pattern": [
+    "XUX",
+    "XOX",
+    "XUX"
+  ],
+  "result": {
+    "item": "minecraft:enchanted_golden_apple"
+  },
+  "show_notification": true
+}

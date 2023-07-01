@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_log"
+    },
+    {
+      "item": "uncraftable:tree_bark"
+    }
+  ],
+  "result": {
+    "item": "minecraft:oak_wood"
+  }
+}

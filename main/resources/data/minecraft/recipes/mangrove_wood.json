@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:mangrove_log"
+    },
+    {
+      "item": "uncraftable:mangrove_bark"
+    }
+  ],
+  "result": {
+    "item": "minecraft:mangrove_wood"
+  }
+}
